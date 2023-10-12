@@ -13,7 +13,6 @@ import streamlit as st
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import confusion_matrix
-from mlxtend.plotting import plot_confusion_matrix
 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout, GlobalMaxPooling1D
