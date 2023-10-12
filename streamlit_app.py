@@ -38,7 +38,7 @@ if st.button('Detect Clickbait'):
     
     # Make prediction
     prediction = model.predict(token_text)
-    pred_label = 'Clickbait' if round(prediction[0]) == 1 else 'Not Clickbait'
+    pred_label = 'Clickbait' if round(prediction[0][0]) == 1 else 'Not Clickbait'
     
     # Display the result
     st.write(f'The video title "{user_input}" is most likely: {pred_label}')
