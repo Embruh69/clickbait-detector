@@ -23,7 +23,7 @@ df = pd.read_csv('./ytcb.csv')
 
 
 def label_clickbait(title):
-    clickbait_keywords = ["shocking", "you won't believe", "amazing", "powerful", "unbelievable", "exclusive",'top','the best','rare', 'best', 'insane', 'crazy', 'challenge']
+    clickbait_keywords = ["shocking", "you won't believe", "amazing", "powerful", "unbelievable", "exclusive",'top','the best','rare', 'best', 'insane', 'crazy', 'challenge', 'gone wrong', '3AM', 'gone sexual']
     forbidden_patterns = [
         r'\d+\s+foods\s+you\s+need\s+to\s+eat\s+before\s+you\s+die',
         r'\d+\s+food\s+you\s+need\s+to\s+eat\s+in\s+your\s+lifetime',
