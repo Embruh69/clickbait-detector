@@ -29,6 +29,7 @@ user_input = st.text_input('Enter Video Title')
 
 # In[ ]:
 maxlen = 500
+vocab_size = 5000
 tokenizer = Tokenizer(num_words=vocab_size)
 
 if st.button('Detect Clickbait'):
