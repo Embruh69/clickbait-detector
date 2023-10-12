@@ -35,13 +35,10 @@ tokenizer.fit_on_texts([user_input])
 
 
 if st.button('Detect Clickbait'):
-    # Process user input
-    token_text = pad_sequences(tokenizer.texts_to_sequences([user_input]), maxlen=maxlen)
-    
-    # Make prediction
-    prediction = model.predict(token_text)
-    pred_label = 'Clickbait' if round(prediction[0][0]) == 1 else 'Not Clickbait'
-    
-    # Display the result
-    st.write(f'The video title "{user_input}" is most likely: {pred_label}')
+    test = [user_input]
+    token_text = pad_sequences(tokenizer.texts_to_sequences(test), maxlen=maxlen)
+    preds = [round(i[0]) for i in model.predict(token_text)]
+    for (text, pred) in zip(test, preds):
+        label = 'Clickbait' if pred == 1.0 else 'Not Clickbait'
+        st.write(f'The video title "{user_input}" is most likely: {label}')
 
