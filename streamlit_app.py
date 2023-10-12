@@ -32,6 +32,9 @@ maxlen = 500
 vocab_size = 5000
 tokenizer = Tokenizer(num_words=vocab_size)
 
+def log_result(title, prediction):
+    st.sidebar.write(f'Title: "{title}", Prediction: {prediction}')
+
 if st.button('Detect Clickbait'):
     # Process user input
     token_text = pad_sequences(tokenizer.texts_to_sequences([user_input]), maxlen=maxlen)
@@ -39,6 +42,7 @@ if st.button('Detect Clickbait'):
     # Make prediction
     prediction = model.predict(token_text)
     pred_label = 'Clickbait' if round(prediction[0][0]) == 1 else 'Not Clickbait'
+    
     log_result(user_input, pred_label)
     
     # Display the result
