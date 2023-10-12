@@ -24,7 +24,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
 # In[32]:
 
 
-df = pd.read_csv('./data/ytcb.csv')
+df = pd.read_csv('./ytcb.csv')
 
 
 # In[34]:
