@@ -10,8 +10,6 @@ import tensorflow as tf
 import re
 import streamlit as st
 
-from imblearn.over_sampling import SMOTE, RandomOverSampler
-
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import confusion_matrix
