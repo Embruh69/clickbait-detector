@@ -31,7 +31,7 @@ user_input = st.text_input('Enter Video Title')
 
 
 if st.button('Detect Clickbait'):
-    if prediction == 1:
+    if prediction == "Clickbait":
         st.write('The video title is clickbait.')
     else:
         st.write('The video title is not clickbait.')
