@@ -63,19 +63,6 @@ tokenizer = Tokenizer(num_words=vocab_size)
 tokenizer.fit_on_texts(x)
 
 
-x_train, x_test, y_train, y_test = train_test_split(x, labels)
-
-x_train = tokenizer.texts_to_sequences(x_train)
-x_test = tokenizer.texts_to_sequences(x_test)
-
-x_train = pad_sequences(x_train, maxlen=maxlen)
-x_test = pad_sequences(x_test, maxlen=maxlen)
-
-
-loss, acc = model.evaluate(x_test, y_test, verbose=2)
-print('Restored model, accuracy: {:5.2f}%'.format(100 * acc))
-
-
 st.title('Clickbait Detection App')
 user_input = st.text_input('Enter Video Title')
 
