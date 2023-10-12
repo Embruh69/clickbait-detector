@@ -31,8 +31,13 @@ user_input = st.text_input('Enter Video Title')
 
 
 if st.button('Detect Clickbait'):
-    if prediction == "Clickbait":
-        st.write('The video title is clickbait.')
-    else:
-        st.write('The video title is not clickbait.')
+    # Process user input
+    token_text = pad_sequences(tokenizer.texts_to_sequences([user_input]), maxlen=maxlen)
+    
+    # Make prediction
+    prediction = model.predict(token_text)
+    pred_label = 'Clickbait' if round(prediction[0][0]) == 1 else 'Not Clickbait'
+    
+    # Display the result
+    st.write(f'The video title "{user_input}" is most likely: {pred_label}')
 
